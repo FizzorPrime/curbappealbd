@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+    <h1>Book List</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>URL</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.productID}">123</td>
+            <td th:text="${product.description}">Object</td>
+            <td th:text="${product.price}">0.01</td>
+            <td th:text="${product.imageUrl}">https://</td>
+        </tr>
+    </table>
+
+</body>
+</html>
