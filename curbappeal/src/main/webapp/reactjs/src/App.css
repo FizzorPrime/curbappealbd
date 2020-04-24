@@ -1,5 +1,11 @@
 .App {
-  text-align: center;
+  text-align: justify;
+  min-height: 100%;
+}
+
+html {
+  min-height: 100%;
+  background-color: #effcf1;
 }
 
 .App-logo {
@@ -11,6 +17,41 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+img {
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  padding-bottom: 15px;
+}
+
+.image-buttons {
+  text-align: center;
+}
+
+.image-card {
+  max-width: 29%;
+  height: 388px;
+  width: 29%;
+  webkit-box-shadow: 0 0 24px 0 rgba(0,0,0,.06), 0 1px 0 0 rgba(0,0,0,.02);
+  box-shadow: 0 0 24px 0 rgba(0,0,0,.06), 0 1px 0 0 rgba(0,0,0,.02);
+  padding: 15px;
+  margin: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cloudinary-button {
+  margin: 15px;
+  margin-top: 25px;
 }
 
 .App-header {
