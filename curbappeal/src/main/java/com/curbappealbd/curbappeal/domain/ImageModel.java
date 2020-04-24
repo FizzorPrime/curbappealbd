@@ -1,10 +1,6 @@
 package com.curbappealbd.curbappeal.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Arrays;
 
 @Entity
@@ -12,6 +8,7 @@ import java.util.Arrays;
 public class ImageModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -21,49 +18,72 @@ public class ImageModel {
     @Column(name = "type")
     private String type;
 
-    @Lob
-    @Column(name="pic")
-    private byte[] pic;
+    @Column(name = "url")
+    private String url;
+
+    @Column(name = "position")
+    private int position;
 
     public ImageModel(){}
 
-    public ImageModel(long id, String name, String type, byte[] pic){
-        this.id = id;
+    public ImageModel(String name, String type, String url){
         this.name = name;
         this.type = type;
-        this.pic = pic;
+        this.url = url;
+    }
+
+    public ImageModel(int position, String name, String type, String url){
+        this.position = position;
+        this.name = name;
+        this.type = type;
+        this.url = url;
     }
 
     public Long getId(){
+
         return this.id;
     }
 
     public void setId(Long id){
+
         this.id = id;
     }
 
     public String getName(){
+
         return this.name;
     }
 
     public void setName(String name){
+
         this.name = name;
     }
 
     public String getType(){
+
         return this.type;
     }
 
     public void setType(String type){
+
         this.type = type;
     }
 
-    public byte[] getPic(){
-        return this.pic;
+    public String getUrl(){
+
+        return this.url;
     }
 
-    public void setPic(byte[] pic){
-        this.pic = pic;
+    public void setUrl(String url){
+        this.url = url;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     @Override
@@ -87,7 +107,7 @@ public class ImageModel {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", pic=" + Arrays.toString(pic) +
+                ", url=" + url +
                 '}';
     }
 }
