@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageButtons from "./ImageButtons";
 
+// creates the html for the images using the database information
 const ImageCard = (props) => {
     return (
         <div className="image-card">
